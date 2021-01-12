@@ -35,7 +35,8 @@ void render(BelaContext *context, void *userData)
 Pulse takes pulsewidth as a float between 0 and 1.
 
 # BexFilter class
-The BexFilter class currently offers resonant high and low pass filters. They are contructed and used in much the same was as the oscillator class, but also must take an input float.
+The BexFilter class currently offers resonant high and low pass filters. They are contructed the same was as `BexOsc`, but also must take an input float when they are called.</br>
+They both take `cutoff (20 - sampleRate)` and `resonance (1 - whatever)`.
 ```
 BexOsc* osc;
 BexFilt* filt;
@@ -67,8 +68,8 @@ void cleanup(BelaContext *context, void *userData)
 ```
 
 # BexDistortion
-Distortion functions are currently not contained within a class. There are 2 - Arcan Overdrive, and Zolzer. Arctan is nice with a lot of control, Zolzer is dirtier. Each take an input, a dry/wet blend (0 - 1), and some unique parameters.
-ArcTanOverdrive takes a float `drive` between 0 and 1, and `range` between 0 and 3000.
+Distortion functions are currently not contained within a class. There are 2 - Arcan Overdrive, and Zolzer. Arctan is nice with a lot of control, Zolzer is dirtier. Each take an input, a dry/wet blend (0 - 1), and some unique parameters.</br>
+ArcTanOverdrive takes a float `drive` between 0 and 1, and `range` between 0 and 3000.</br>
 ZolzerDistortion has an optional `exponent` argument that defaults to `2.71828f` - you can play with this but the default is the intention.
 ```
 void render(BelaContext *context, void *userData)
