@@ -68,9 +68,10 @@ void cleanup(BelaContext *context, void *userData)
 ```
 
 # BexDistortion
-Distortion functions are currently not contained within a class. There are 2 - Arcan Overdrive, and Zolzer. Arctan is nice with a lot of control, Zolzer is dirtier. Each take an input, a dry/wet blend (0 - 1), and some unique parameters.</br>
-ArcTanOverdrive takes a float `drive` between 0 and 1, and `range` between 0 and 3000.</br>
-ZolzerDistortion has an optional `exponent` argument that defaults to `2.71828f` - you can play with this but the default is the intention.
+Distortion functions are currently not contained within a class. There are 2 - Arcan Overdrive, and Zolzer. Arctan is nice with a lot of control, Zolzer is dirtier.</br>
+Each take a `float input`, a dry/wet `float blend (0 - 1)`, and some unique parameters.</br>
+`ArcTanOverdrive` also takes a float `drive` between 0 and 1, and `range` between 0 and 3000.</br>
+`ZolzerDistortion` has an optional `exponent` argument that defaults to `2.71828f` - you can play with this but the default is the intention.
 ```
 void render(BelaContext *context, void *userData)
 {
