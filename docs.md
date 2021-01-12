@@ -1,5 +1,5 @@
 # BexOsc class
-Currently, the oscillator class provides 6 oscillator types - Sine, Saw, Square, Pulse, Triangle, and Noise (with more to come!)
+Currently, the oscillator class provides 6 oscillator types - `Sine`, `Saw`, `Square`, `Pulse`, `Triangle`, and `Noise` (with more to come!)
 
 You will need to create an instance of the BexOsc class and pass this the Bela's sample rate. You can also optionally pass it a phase offset. You could construct it as a member of another class, or in the main `render.cpp` file such as:
 ```
@@ -35,7 +35,7 @@ void render(BelaContext *context, void *userData)
 Pulse takes pulsewidth as a float between 0 and 1.
 
 # BexFilter class
-The BexFilter class currently offers resonant high and low pass filters. They are contructed the same was as `BexOsc`, but also must take an input float when they are called.</br>
+The BexFilter class currently offers `Highpass` and `Lowpass`. They are contructed the same was as `BexOsc`, but also must take an input float when they are called.</br>
 They both take `cutoff (20 - sampleRate)` and `resonance (1 - whatever)`.
 ```
 BexOsc* osc;
