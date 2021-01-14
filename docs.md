@@ -4,24 +4,31 @@ You must only include the `Bex.h` file to use the library, as all class and func
 <ol>
 <li> 
 SSH into the Bela and make a directory for Bex in your project. </br>
+
 ```
-ssh root@192.168.7.2
-mkdir -p Bela/projects/<your-project-name>/Bex/
+ssh root@192.168.7.2 mkdir -p Bela/projects/your-project-name/Bex/
 ```
+
 </li>
 <li>
 Exit the SSH, clone the library wherever you want it, navigate into that folder and copy everything over to the folder you made.</br>
+
 ```
-git clone https://github.com/ryanjeffares/Bex.git
-cd Bex
+git clone https://github.com/ryanjeffares/Bex.git && cd Bex
 Mac/Linux: scp src/* root@192.168.7.2:Bela/projects/<your-project-name>/Bex/
 Windows:   copy src/* root@192.168.7.2:Bela/projects/<your-project-name>/Bex/
 ```
+
 </li>
 <li>
-Now you can include the library with `#include "Bex/Bex.h"`.
+Now you can include the library with #include "Bex/Bex.h".
 </li>
 </ol>
+
+# Contributing
+I gladly welcome any contributions, be it features or improvements. Just create a branch and open a pull request into `main`. </br>
+If the features you're adding should be contained within a class, create the class in `Bex.h` and create a relevant `.cpp` file. Inline with how classes in Bela's inbuilt libraries work, classes should have a default constructor and it should be unnecessary to call the constructor of the class, needing only to call the `setup` function with parameters such as sample rate that the class needs to use. You can include a constructor that takes parameters if you want for situations where that is easier to use, but it should just call the class's `setup` function with those parameters.</br>
+Also inline with Bela's inbuilt libraries, file and class names should be upper camel case while function and variables names should be lower camel case.
 
 # BexOsc class
 Currently, the oscillator class provides 6 oscillator types - `sine`, `saw`, `square`, `pulse`, `triangle`, and `noise` (with more to come!)
