@@ -6,7 +6,7 @@ You must only include the `Bex.h` file to use the library, as all class and func
 SSH into the Bela and make a directory for Bex. </br>
 ```
 ssh root@192.168.7.2
-mkdir Bela/libraries/Bex
+mkdir -p /usr/local/include/Bex/
 ```
 </li>
 <li>
@@ -14,8 +14,8 @@ Exit the SSH, clone the library wherever you want it, navigate into that folder 
 ```
 git clone https://github.com/ryanjeffares/Bex.git
 cd Bex
-Mac/Linux: scp * root@192.168.7.2:/Bela/libraries/Bex/
-Windows:   copy * root@192.168.7.2:/Bela/libraries/Bex/
+Mac/Linux: scp src/* root@192.168.7.2:/usr/local/include/Bex/
+Windows:   copy src/* root@192.168.7.2:/usr/local/include/Bex/
 ```
 </li>
 <li>
