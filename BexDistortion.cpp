@@ -1,19 +1,19 @@
 /*  
-	BexDistortion.h
+	BexDistortion.cpp
 	
 	------------------------------------
 	Ryan Jeffares 01/12/2021
 	
-	Distortion/Overdrive class designed to be used on Bela boards.
+	Distortion/Overdrive functions designed to be used on Bela boards.
 	------------------------------------
 */
 
-#include "BexUtilities.h"
+#include "Bex.h"
 #include <math.h>
 
 // drive 0 - 1
 // range 0 - 3000
-float ArcTanOverdrive(float input, float drive, float range, float blend)
+float arcTanOverdrive(float input, float drive, float range, float blend)
 {
 	float sig = (2 / bex_Pi) * atan(input * drive * range);
 	return (blend * sig) + ((1 - blend) * input);
@@ -21,7 +21,7 @@ float ArcTanOverdrive(float input, float drive, float range, float blend)
 
 // dirtier
 // exponent between 0 and 3, but default here is good
-float ZolzerDistortion(float input, float blend, float exponent = 2.71828f)
+float zolzerDistortion(float input, float blend, float exponent = 2.71828f)
 {
 	float sample = input;
 	if(abs(sample) > 0.000069)

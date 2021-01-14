@@ -8,32 +8,43 @@
 	------------------------------------
 */
 
-#include "BexOsc.h"
-#include "BexUtilities.h"
+#include "Bex.h"
 #include <math.h>
 #include <cstdlib>
 
-float BexOsc::Sine(float frequency)
+void BexOsc::setup(float sr)
+{
+	sampleRate = sr;
+	phase = 0;
+}
+
+void BexOsc::setup(float sr, float p)
+{
+	sampleRate = sr;
+	phase = p;
+}
+
+float BexOsc::sine(float frequency)
 {
 	output = sin(phase * bex_TwoPi);
 	phase = phase >= 1 ? 0 : phase + (1. / (sampleRate / frequency));
 	return output;
 }
 
-float BexOsc::Saw(float frequency)
+float BexOsc::saw(float frequency)
 {
 	output = phase;
 	phase = phase >= 1 ? -1 : phase + (2 / (sampleRate / frequency));
 	return output;
 }
 
-float BexOsc::Square(float frequency)
+float BexOsc::square(float frequency)
 {
 	phase = phase >= 1 ? 0 : phase + (1 / (sampleRate / frequency));
 	return phase > 0.5 ? -1 : 1;
 }
 
-float BexOsc::Pulse(float frequency, float pwidth)
+float BexOsc::pulse(float frequency, float pwidth)
 {
 	if(pwidth < 0)
 	{
@@ -47,13 +58,13 @@ float BexOsc::Pulse(float frequency, float pwidth)
 	return phase > pwidth ? -1 : 1;
 }
 
-float BexOsc::Triangle(float frequency, float folding)
+float BexOsc::triangle(float frequency, float folding)
 {
 	phase = phase >= 1 ? 0 : phase + (1 / (sampleRate / frequency));
 	return phase > 0.5 ? ((1 - phase) - 0.25) * 4 : (phase - 0.25) * 4;
 }
 
-float BexOsc::Noise()
+float BexOsc::noise()
 {
 	return ((std::rand() / RAND_MAX) * 2) - 1; 
 }

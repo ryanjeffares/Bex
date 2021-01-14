@@ -8,14 +8,18 @@
 	------------------------------------
 */
 
-#include "BexFilter.h"
-#include "BexUtilities.h"
+#include "Bex.h"
 #include <math.h>
+
+void BexFilter::setup(float sr)
+{
+	sampleRate = sr;
+}
 
 // Resonance is 1 to whatever you want - somewhere between 5 and 10 is the limit of what would generally be considered musical
 // But 'musical' is up for interpretation :)
 
-float BexFilter::Lowpass(float input, float cutoff, float resonance)
+float BexFilter::lowpass(float input, float cutoff, float resonance)
 {
 	if(cutoff < 20)
 	{
@@ -34,12 +38,12 @@ float BexFilter::Lowpass(float input, float cutoff, float resonance)
 	return pos;
 }
 
-float BexFilter::Highpass(float input, float cutoff, float resonance)
+float BexFilter::highpass(float input, float cutoff, float resonance)
 {
-	return input - Lowpass(input, cutoff, resonance);
+	return input - lowpass(input, cutoff, resonance);
 }
 
-float BexFilter::Bandpass(float input, float cutoff, float resonance)
+float BexFilter::bandpass(float input, float cutoff, float resonance)
 {
 	return input;
 }

@@ -8,6 +8,7 @@
 	------------------------------------
 */
 
+#include "Bex.h"
 #include <math.h>
 
 int ftom(float freq)
