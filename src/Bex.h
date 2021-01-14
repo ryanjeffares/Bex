@@ -26,6 +26,11 @@ class BexOsc
 // TO DO:
 // Optional folding on triangle wave
 public:
+	BexOsc(){};
+	BexOsc(float sr, float phase = 0)
+	{
+		setup(sr, phase);
+	}
     void setup(float sr);
     void setup(float sr, float phase);
 	
@@ -52,6 +57,11 @@ class BexFilter
 // TO DO:
 // Bandpass
 public:
+	BexFilter(){};
+	BexFilter(float sr)
+	{
+		setup(sr);
+	}
 	void setup(float sr);
 	
 	float lowpass(float input, float cutoff, float resonance = 1);
