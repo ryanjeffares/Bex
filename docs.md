@@ -1,12 +1,12 @@
 # Installation and Including
-You must only include the `Bex.h` file to use the library, as all class and function declarations are there. You can simply upload all source files to your current project (there are no additional dependencies) and include with `#include "Bex.h"` or add the library to your Bela's include path:
+You must only include the `Bex.h` file to use the library, as all class and function declarations are there. You can copy all source files to your current project (there are no additional dependencies) and include:
 
 <ol>
 <li> 
-SSH into the Bela and make a directory for Bex. </br>
+SSH into the Bela and make a directory for Bex in your project. </br>
 ```
 ssh root@192.168.7.2
-mkdir -p /usr/local/include/Bex/
+mkdir -p Bela/projects/<your-project-name>/Bex/
 ```
 </li>
 <li>
@@ -14,12 +14,12 @@ Exit the SSH, clone the library wherever you want it, navigate into that folder 
 ```
 git clone https://github.com/ryanjeffares/Bex.git
 cd Bex
-Mac/Linux: scp src/* root@192.168.7.2:/usr/local/include/Bex/
-Windows:   copy src/* root@192.168.7.2:/usr/local/include/Bex/
+Mac/Linux: scp src/* root@192.168.7.2:Bela/projects/<your-project-name>/Bex/
+Windows:   copy src/* root@192.168.7.2:Bela/projects/<your-project-name>/Bex/
 ```
 </li>
 <li>
-Now you can include the library the way you would with Bela's inbuilt ones, with `#include <libraries/Bex/Bex.h>`.
+Now you can include the library with `#include "Bex/Bex.h"`.
 </li>
 </ol>
 

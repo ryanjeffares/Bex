@@ -13,12 +13,12 @@
 
 int ftom(float freq)
 {
-	return 69 + 12 * log2(freq / 440);
+	return 69 + 12 * log2(freq / 440.);
 }
 
 float mtof(int midiNote)
 {
-	return pow(2, ((midiNote - 69) / 12)) * 440;
+	return pow(2, ((midiNote - 69) / 12.)) * 440;
 }
 
 float quantizeFrequencyToNote(float freq)

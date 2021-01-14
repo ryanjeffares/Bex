@@ -8,6 +8,8 @@
 	------------------------------------
 */
 
+#pragma once
+
 #ifndef bex_TwoPi
 #define bex_TwoPi 6.283185307179586476925286766559
 #endif
