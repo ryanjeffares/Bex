@@ -31,6 +31,7 @@ public:
 	{
 		setup(sr, phase);
 	}
+	~BexOsc(){};
     void setup(float sr);
     void setup(float sr, float phase);
 	
@@ -62,6 +63,7 @@ public:
 	{
 		setup(sr);
 	}
+	~BexFilter(){};
 	void setup(float sr);
 	
 	float lowpass(float input, float cutoff, float resonance = 1);
