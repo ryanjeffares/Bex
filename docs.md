@@ -11,7 +11,7 @@ ssh root@192.168.7.2 mkdir -p Bela/projects/your-project-name/Bex/
 
 </li>
 <li>
-Exit the SSH, clone the library wherever you want it, navigate into that folder and copy everything over to the folder you made.</br>
+Exit the SSH, clone the library wherever you want it, navigate into that folder and copy the source files over to the folder you made.</br>
 
 ```
 git clone https://github.com/ryanjeffares/Bex.git && cd Bex
